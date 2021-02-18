@@ -13,10 +13,13 @@ def apply_coupons(cart, coupons)
     elsif item_info and item_info[:count] >= coupon[:num]
   cart.push {
     :item => coupon[:item]+ " W/COUPON",
-    :price => (cou)
+    :price => (coupon[:cost]/coupon[:num]),
+    :clearance => item_inf[:clearance],
+    :count => coupon[:num]
   }
     end
   end
+  cart
 end
 
 def apply_clearance(cart)

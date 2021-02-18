@@ -12,7 +12,7 @@ def apply_coupons(cart, coupons)
       item_with_coupon[:count] += coupon[:num]
     elsif item_info and item_info[:count] >= coupon[:num]
   cart.push {
-    :item => coupon[:item]+ " W/COUPON",
+    :item => (coupon[:item]+ " W/COUPON"),
     :price => (coupon[:cost]/coupon[:num]),
     :clearance => item_inf[:clearance],
     :count => coupon[:num]

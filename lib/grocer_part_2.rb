@@ -10,7 +10,8 @@ def apply_coupons(cart, coupons)
     if item_with_coupon and item_info[:count] >= coupon[:num]
       item_info[:count] -= coupon[:num]
       item_with_coupon[:count] += coupon[:num]
-      binding.pry
+    elsif item_info and item_info[:count] >= coupon[:num]
+  
     end
   end
 end

@@ -5,8 +5,8 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
   coupons.each do |coupon|
-    item_info=find_item_in_collection(coupon[:item], cart)
-    item_with_coupon=find_item_in_collection(coupon[:item]+" W/COUPON", cart)
+    item_info=find_item_by_name_in_collection(coupon[:item], cart)
+    item_with_coupon=find_item_by_name_in_collection(coupon[:item]+" W/COUPON", cart)
     if item_with_coupon and item_info[:count] >= coupon[:num]
       item_info[:count] -= coupon[:num]
       item_with_coupon[:count] += coupon[:num]
